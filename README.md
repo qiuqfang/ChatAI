@@ -12,7 +12,7 @@ The Repo based on [OpenAI GPT-3.5 Turbo API](https://platform.openai.com/docs/gu
    npm i
    ```
 
-2. Add your [OpenAI API key](https://platform.openai.com/account/api-keys) to `.env`
+2. Create an `.env` file and Add your [OpenAI API key](https://platform.openai.com/account/api-keys) to it
    ```
    OPENAI_API_KEY=sk-xxx...
    ```
