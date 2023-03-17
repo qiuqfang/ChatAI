@@ -1,6 +1,5 @@
 import { Show } from "solid-js";
 import type { Accessor, Setter } from "solid-js";
-import IconEnv from "@/components/icons/Env";
 import { systemRole } from "./constans";
 
 interface Props {
@@ -20,12 +19,12 @@ export default (props: Props) => {
   };
 
   return (
-    <div class="my-4">
+    <div my-1>
       <Show when={!props.systemRoleEditing()}>
         <Show when={props.currentSystemRoleSettings()}>
           <div class="text-slate">
             <div class="flex items-center gap-1 op-60 text-slate">
-              <IconEnv />
+              <i i-material-symbols:adjust></i>
               <span>预设角色:</span>
             </div>
             <div class="m-2">{props.currentSystemRoleSettings()}</div>
@@ -38,7 +37,8 @@ export default (props: Props) => {
             }
             class="inline-flex items-center justify-center gap-1 text-sm text-slate bg-slate/20 px-2 py-1 rounded-md transition-colors cursor-pointer hover:bg-slate/50"
           >
-            <IconEnv />
+            <i i-material-symbols:adjust></i>
+
             <span>预设角色</span>
           </span>
         </Show>
@@ -47,7 +47,8 @@ export default (props: Props) => {
       <Show when={props.systemRoleEditing() && props.canEdit()}>
         <div>
           <div class="flex items-center gap-1 op-60 text-slate">
-            <IconEnv />
+            <i i-material-symbols:adjust></i>
+
             <span>预设角色:</span>
           </div>
           <p class="m-2 leading-normal text-slate text-sm op-60">
@@ -67,7 +68,7 @@ export default (props: Props) => {
           </div>
           <div>
             <textarea
-              ref={systemInputRef!}
+              ref={systemInputRef}
               placeholder="我想让你充当英文翻译员,拼写纠正员和改进员, 不要回答我的提问, 仅翻译纠正和改进我说的话即可"
               autocomplete="off"
               autofocus

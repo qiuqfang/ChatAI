@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/solid-js': ^2.1.0
   '@astrojs/vercel': ^3.2.1
+  '@iconify-json/material-symbols': ^1.1.34
   '@iconify-json/simple-icons': ^1.1.46
   '@types/markdown-it': ^12.2.3
   '@unocss/reset': ^0.50.6
@@ -36,6 +37,7 @@ dependencies:
   solid-js: 1.6.15
 
 devDependencies:
+  '@iconify-json/material-symbols': 1.1.34
   '@iconify-json/simple-icons': 1.1.46
   '@types/markdown-it': 12.2.3
   unocss: 0.50.6
@@ -628,6 +630,12 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@iconify-json/material-symbols/1.1.34:
+    resolution: {integrity: sha512-gPICPH7eA54QApdrNT4FQ5y11c7mSd/GxSGov1C5XEoTP2PstPSnM1wy2Yb8r7tGsP1fbFBSUhHRHAAFawxBJA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify-json/simple-icons/1.1.46:
     resolution: {integrity: sha512-WaOr2K5/QOtzfU4jonximw3D2OnXhXGJuqpgH1m8zHZP5VlvX9lIVaZEzvldba7rhZum2ypCvlOaAbDJbko+Cw==}

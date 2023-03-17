@@ -1,8 +1,5 @@
 import type { ChatMessage } from "@/types";
 import { createSignal, Index, Show } from "solid-js";
-import IconClear from "./icons/Clear";
-import IconRand from "./icons/Rand";
-import IconSend from "./icons/Send";
 import MessageItem from "./MessageItem";
 import RoleSystem from "./RoleSystem";
 import Question from "../utils/Question";
@@ -170,22 +167,23 @@ export default () => {
 
   return (
     <div my-3>
-      <div class="flex items-center">
-        <div onClick={randQuestion}>
-          <span class="inline-flex items-center justify-center gap-1 text-sm text-slate bg-slate/20 px-2 py-1 rounded-md transition-colors cursor-pointer hover:bg-slate/50">
-            <IconRand />
-            <span>随便问问</span>
-          </span>
-        </div>
-      </div>
+      <div class="flex flex-wrap items-start">
+        <span
+          onClick={randQuestion}
+          class="flex items-center justify-center gap-1 text-sm text-slate bg-slate/20 px-2 py-1 rounded-md transition-colors cursor-pointer hover:bg-slate/50 mr-1 my-1"
+        >
+          <i i-material-symbols:screen-rotation-alt></i>
+          <span>随便问问</span>
+        </span>
 
-      <RoleSystem
-        canEdit={() => messageList().length === 0}
-        systemRoleEditing={systemRoleEditing}
-        setSystemRoleEditing={setSystemRoleEditing}
-        currentSystemRoleSettings={currentSystemRoleSettings}
-        setCurrentSystemRoleSettings={setCurrentSystemRoleSettings}
-      />
+        <RoleSystem
+          canEdit={() => messageList().length === 0}
+          systemRoleEditing={systemRoleEditing}
+          setSystemRoleEditing={setSystemRoleEditing}
+          currentSystemRoleSettings={currentSystemRoleSettings}
+          setCurrentSystemRoleSettings={setCurrentSystemRoleSettings}
+        />
+      </div>
 
       <Index each={messageList()}>
         {(message, index) => (
@@ -269,7 +267,7 @@ export default () => {
             rounded-sm
             w-65
           >
-            <IconSend />
+            <i i-material-symbols:send-outline></i>
             发送
           </button>
           <button
@@ -291,7 +289,7 @@ export default () => {
             ml-2
             w-30
           >
-            <IconClear />
+            <i i-material-symbols:tab-close-sharp></i>
             清空
           </button>
         </div>
