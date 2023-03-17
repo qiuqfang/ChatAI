@@ -33,10 +33,10 @@ export default ({ role, message, showRetry, onRetry }: Props) => {
     <div class="py-2 -mx-4 px-4 transition-colors md:hover:bg-slate/3">
       <div class="flex gap-3 rounded-lg" class:op-75={role === "user"}>
         <div
-          class={`shrink-0 w-7 h-7 mt-4 rounded-full op-80 ${roleClass[role]}`}
+          class={`shrink-0 w-7 h-7 rounded-full op-80 ${roleClass[role]}`}
         ></div>
         <div
-          class="message prose text-slate break-words overflow-hidden"
+          class="message max-w-full text-slate break-words overflow-hidden"
           innerHTML={htmlString()}
         />
       </div>
