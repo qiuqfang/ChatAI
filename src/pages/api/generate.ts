@@ -21,10 +21,18 @@ export const post: APIRoute = async (context) => {
   }
   const initOptions = generatePayload(apiKey, messages);
 
-  const response = (await fetch(
+  const response = await fetch(
     "https://api.openai.com/v1/chat/completions",
     initOptions
-  )) as Response;
-
-  return new Response(parseOpenAIStream(response));
+  ).catch((error) => {
+    console.log(error);
+  });
+  if (response) return new Response(parseOpenAIStream(response));
+  else
+    return {
+      body: JSON.stringify({
+        code: 500,
+        message: "连接超时",
+      }),
+    };
 };
