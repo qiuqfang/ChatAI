@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header class="flex items-center">
+  <i class="i-simple-icons:openai"></i>
+  <div class="flex items-center ml-2">
+    <span
+      text-2xl
+      text-transparent
+      font-extrabold
+      bg-clip-text
+      bg-gradient-to-r
+      from-green-400
+      to-yellow-600
+    >
+      {title}
+    </span>
+  </div>
+</header>
+
+<style is:raw>
+  header {
+    justify-content: center;
+    margin: 2rem 0;
+  }
+</style>
