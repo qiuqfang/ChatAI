@@ -15,6 +15,7 @@ export default defineConfig({
   integrations: [
     UnoCSS({
       presets: [
+        // FIXME: 加了 presetUno 在node版本为18以下无法通过 pnpm dev 打开
         presetUno(),
         presetAttributify(),
         presetTypography(),
