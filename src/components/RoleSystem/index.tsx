@@ -24,11 +24,11 @@ export default (props: Props) => {
       <Show when={!props.systemRoleEditing()}>
         <Show when={props.currentSystemRoleSettings()}>
           <div class="text-slate">
-            <div class="flex items-center op-60 text-slate">
+            <div class="flex items-center gap-1 op-60 text-slate">
               <IconEnv />
               <span>预设角色:</span>
             </div>
-            <div class="mt-1">{props.currentSystemRoleSettings()}</div>
+            <div class="m-2">{props.currentSystemRoleSettings()}</div>
           </div>
         </Show>
         <Show when={!props.currentSystemRoleSettings() && props.canEdit()}>
@@ -43,13 +43,14 @@ export default (props: Props) => {
           </span>
         </Show>
       </Show>
+
       <Show when={props.systemRoleEditing() && props.canEdit()}>
         <div>
-          <div class="flex items-center op-60 text-slate">
+          <div class="flex items-center gap-1 op-60 text-slate">
             <IconEnv />
             <span>预设角色:</span>
           </div>
-          <p class="my-2 leading-normal text-slate text-sm op-60">
+          <p class="m-2 leading-normal text-slate text-sm op-60">
             给你的助手添加'人'设, 它将更好为您服务
           </p>
           <div class="flex flex-wrap">
