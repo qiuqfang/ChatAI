@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
-import unocss from "unocss/astro";
-import { presetUno } from "unocss";
-import presetAttributify from "@unocss/preset-attributify";
-import presetTypography from "@unocss/preset-typography";
-import presetIcons from "@unocss/preset-icons";
+import UnoCSS from "unocss/astro";
+import {
+  presetUno,
+  presetAttributify,
+  presetTypography,
+  presetIcons,
+} from "unocss";
 import solidJs from "@astrojs/solid-js";
 
 import vercel from "@astrojs/vercel/edge";
@@ -11,10 +13,10 @@ import vercel from "@astrojs/vercel/edge";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    unocss({
+    UnoCSS({
       presets: [
-        presetAttributify(),
         presetUno(),
+        presetAttributify(),
         presetTypography(),
         presetIcons({
           extraProperties: {
