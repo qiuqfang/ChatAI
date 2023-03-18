@@ -4,7 +4,6 @@ import MarkdownIt from "markdown-it";
 // @ts-ignore
 import mdKatex from "markdown-it-katex";
 import mdHighlight from "markdown-it-highlightjs";
-import IconRefresh from "./icons/Refresh";
 
 interface Props {
   role: ChatMessage["role"];
