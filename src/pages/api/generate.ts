@@ -30,9 +30,6 @@ export const post: APIRoute = async (context) => {
   if (response) return new Response(parseOpenAIStream(response));
   else
     return {
-      body: JSON.stringify({
-        code: 500,
-        message: "连接超时",
-      }),
+      body: "连接超时",
     };
 };
